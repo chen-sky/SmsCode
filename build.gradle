@@ -4,26 +4,26 @@ buildscript {
     
     repositories {
         google()
-        jcenter()
-        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
-        mavenCentral() // add repository
+        mavenCentral()
+        maven { 
+            url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+            allowInsecureProtocol = true
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:8.1.1'
         
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2' // greenDao plugin
-
-        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.17' // AndResGuard
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.3.1' // greenDao plugin
+        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.21' // AndResGuard
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
     }
 }
